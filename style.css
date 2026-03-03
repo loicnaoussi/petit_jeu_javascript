@@ -67,7 +67,7 @@ section {
   top: 130px;
   left: 480px;
   border-radius: 50%;
-  animation: anime-obstacles 2s infinite;
+  animation: anime-obstacles 2s ;
 }
 
 @keyframes anime-obstacles {

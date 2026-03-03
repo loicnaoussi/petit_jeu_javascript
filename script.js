@@ -1,15 +1,25 @@
 let perso = document.querySelector(".perso");
 let obstacles = document.querySelector(".obstacles");
 
-function sauter(){
-    if(perso.classList != "animate"){
-        perso.classList.add('animation');
-    }
-    setTimeout(function(){
-        perso.classList.remove('animation');
-    },500)
+function sauter() {
+  if (perso.classList != "animate") {
+    perso.classList.add("animation");
+  }
+  setTimeout(function () {
+    perso.classList.remove("animation");
+  }, 500);
 }
 
-let verification = setInterval(function(){
-    let persoTop = parseInt(window.getComputedStyle(dino).getPropertyValue('top'));
-    let obstacleLeft = parseInt(window.getComputedStyle(obstacles).getPropertyValue('left'));
+let verification = setInterval(function () {
+  let persoTop = parseInt(
+    window.getComputedStyle(perso).getPropertyValue("top"),
+  );
+  let obstacleLeft = parseInt(
+    window.getComputedStyle(obstacles).getPropertyValue("left"),
+  );
+
+  if (obstacleLeft < 20 && obstacleLeft > 0 && persoTop >= 140) {
+    obstacles.computedStyleMap.anime = "none";
+    alert("Vous avez perdu");
+  }
+});
