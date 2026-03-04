@@ -19,7 +19,7 @@ let verification = setInterval(function () {
   );
 
   if (obstacleLeft < 20 && obstacleLeft > 0 && persoTop >= 140) {
-    obstacles.computedStyleMap.anime = "none";
+    obstacles.style.animation = "none";
     alert("Vous avez perdu");
   }
 });
